@@ -108,18 +108,18 @@ const superheroes = [
 
     // 1.
 
-    const heroNames = superheroes.map((item) => item.name);
+    const heroNames = superheroes.map(item => item.name);
     console.log("A list of all heroes: ", heroNames);
 
     // 2.
 
-    const heroLight = superheroes.filter((item) => item.weight < 190);
+    const heroLight = superheroes.filter(item => item.weight < 190);
     console.log("Heroes under 190 pnds: ", heroLight);
 
     // 3.
 
     const search200pndsHero = function(array) {
-        return array.filter((item) => item.weight == 200)
+        return array.filter(item => item.weight == 200)
         .map((names) => names.name);
     }
 
@@ -131,7 +131,7 @@ const superheroes = [
         return self.indexOf(value) === index;
     }
 
-    const appearances = superheroes.map((item) => item.first_appearance)
+    const appearances = superheroes.map(item => item.first_appearance)
         .filter(onlyUnique);
 
     console.log("List of first appearances: ", appearances);
@@ -139,7 +139,7 @@ const superheroes = [
     // 5.
 
     const publisher = function(array, publ) {
-        return array.filter((item) => item.publisher === publ)
+        return array.filter(item => item.publisher === publ)
         .map((item) => item.name);
     }
     
@@ -149,7 +149,7 @@ const superheroes = [
     // 6. & .7
 
     const totalPublisherWeight = function(array, publ){
-        return array.filter((item) => item.weight !== "unknown" && item.publisher === publ)
+        return array.filter(item => item.weight !== "unknown" && item.publisher === publ)
         .reduce((total, item) => {
             return parseInt(item.weight) + total;
         }, 0)
@@ -161,7 +161,7 @@ const superheroes = [
     // 8.
 
     const highestWeight = function(array){
-        return array.filter((item) => item.weight !== "unknown")
+        return array.filter(item => item.weight !== "unknown")
         .reduce((max, item) => {
             return Math.max(max, parseInt(item.weight))
         }, 0)
